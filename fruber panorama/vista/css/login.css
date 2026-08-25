@@ -1,0 +1,187 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-image: url(https://img.freepik.com/vector-premium/luna-arbol_104785-1.jpg?semt=ais_hybrid&w=740&q=80);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: sans-serif;
+}
+
+.login-container {
+    width: 450px; 
+    padding: 40px;
+    background-color: rgb(189, 185, 185);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+}
+
+.login-container h1 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 36px;
+    color: #333;
+}
+
+/* --- NUEVO: Estilo para los títulos sobre los inputs --- */
+.form-label {
+    display: block;
+    text-align: left;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Contenedor del Input (ahora con margen inferior un poco más amplio) */
+.input-group { 
+    margin-bottom: 20px; /* Aumentado para que no se pegue con el siguiente label */
+    display: flex; 
+    width: 100%;
+    align-items: center; 
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 0 12px;
+}
+
+/* Efecto focus al seleccionar el input */
+.input-group:focus-within {
+    border-color: aqua;
+    box-shadow: 0 0 6px rgba(0, 255, 255, 0.2);
+}
+
+/* El Icono */
+.input-icon {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #666;
+}
+
+/* El Input */
+.login-container input {
+    outline: none;
+    flex-grow: 1;
+    border: none;
+    background: transparent;
+    padding: 12px 0;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+
+/* Cuando el input de adentro es válido y tiene texto escrito */
+.input-group:has(input:required:valid) {
+    border-color: #2ecc71;
+    box-shadow: 0 0 6px rgba(46, 204, 113, 0.2);
+}
+
+
+/* Botón de Login */
+.login-btn {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 16px; 
+    border: none;
+    color: white;
+    border-radius: 6px;
+    background-color: #333;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 13px;
+    transition: background 0.3s;
+}
+
+
+.login-btn:hover {
+    background-color: #444;
+    color: white;
+}
+
+
+
+/* Enlace de Registro */
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 15px;
+    color: #333;
+}
+
+.register-link a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* --- NUEVO: Estilos para la selección de Roles --- */
+.grupo-seleccion {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.titulo-grupo {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Contenedor para alinear los botones uno al lado del otro */
+.opciones-contenedor {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.opcion-item {
+    flex: 1; /* Hace que todos los botones midan lo mismo */
+}
+
+/* Ocultamos el radio button real, usaremos el label como botón */
+.input-oculto {
+    display: none;
+}
+
+/* Estilo base del botón (Label) */
+.boton-seleccion {
+    display: block;
+    text-align: center;
+    background-color: white;
+    color: #333;
+    padding: 12px 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover */
+.boton-seleccion:hover {
+    background-color: #f0f0f0;
+    border-color: #999;
+}
+
+/* Truco de magia: Cuando el input oculto está seleccionado (:checked), 
+   cambiamos el estilo del label que viene inmediatamente después (+) */
+.input-oculto:checked + .boton-seleccion {
+    background-color: #2ecc71; /* Verde llamativo */
+    color: white;
+    border-color: #27ae60;
+    box-shadow: 0 4px 8px rgba(46, 204, 113, 0.3);
+}

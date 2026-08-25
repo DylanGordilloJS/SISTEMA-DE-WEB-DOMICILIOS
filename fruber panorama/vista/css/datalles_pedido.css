@@ -1,0 +1,115 @@
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .enlace-volver {
+            display: inline-block;
+            margin-bottom: 15px;
+            color: #4a7a3d;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .enlace-volver:hover {
+            text-decoration: underline;
+        }
+
+        .contenedor {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        /* Estilos de la tarjeta del pedido */
+        .tarjeta-pedido {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 5px solid #2c3e50;
+        }
+        .cabecera-pedido {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eeeeee;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .cabecera-pedido h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        /* Etiquetas de colores para los estados */
+        .etiqueta {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        .estado-pendiente { background-color: #f39c12; color: #fff; }
+        .estado-camino { background-color: #3498db; }
+        .estado-entregado { background-color: #2ecc71; }
+        .estado-cancelado { background-color: #e74c3c; }
+
+        /* Tabla de productos (Detalle_Pedido) */
+        .tabla-productos {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+        .tabla-productos th, .tabla-productos td {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 1px solid #f9f9f9;
+        }
+        .tabla-productos th {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        .total-pedido {
+            text-align: right;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Botón de cancelar */
+        .acciones {
+            text-align: right;
+            margin-top: 15px;
+        }
+        .btn-cancelar {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn-cancelar:hover {
+            background-color: #c0392b;
+        }
+        
+        /* Botón desactivado (cuando ya está en camino o entregado) */
+        .btn-desactivado {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+        .btn-desactivado:hover {
+            background-color: #bdc3c7;
+        }

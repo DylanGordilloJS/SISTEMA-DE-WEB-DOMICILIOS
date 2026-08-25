@@ -1,0 +1,199 @@
+/* --- VARIABLES Y CONFIGURACIÓN BASE --- */
+:root {
+    --primario: #27ae60;
+    --primario-oscuro: #219150;
+    --segundo: #ecf0f1;
+    --color-texto: #2c3e50;
+    --texto-mutado: #7f8c8d;
+    --blanco: #ffffff;
+    --peligro: #e74c3c;
+    --peligro-oscuro: #c0392b;
+    --peligro-fondo: #fadbd8;
+    --borde: #bdc3c7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--segundo);
+    color: var(--color-texto);
+}
+
+/* --- ENCABEZADO (HEADER) --- */
+.encabezado {
+    background-color: var(--primario);
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.encabezado h2 {
+    color: var(--blanco);
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.logo_header {
+    max-width: 50px;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    transition: transform 0.2s;
+}
+
+.logo_header:hover {
+    transform: scale(1.05);
+}
+
+#botones_enlazados ul {
+    display: flex;
+    list-style: none;
+}
+
+#botones_enlazados li {
+    border: 1.5px solid var(--blanco);
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+#botones_enlazados li:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+#botones_enlazados a {
+    display: block;
+    padding: 6px 20px;
+    color: var(--blanco);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.contenedor_centro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.contenedor_configuracion {
+    width: 100%;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px; /* Espaciado entre los bloques de configuración */
+}
+
+/* --- CAJAS DE FORMULARIO --- */
+.caja_formulario {
+    background-color: var(--blanco);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.caja_formulario h3 {
+    margin-bottom: 22px;
+    color: var(--primario);
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 2px solid var(--segundo);
+    padding-bottom: 8px;
+}
+
+/* --- ESTRUCTURA DE CAMPOS (INPUTS) --- */
+.grupo_input {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.grupo_input label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--texto-mutado);
+}
+
+.grupo_input input {
+    width: 100%;
+    padding: 11px 14px;
+    font-size: 15px;
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    color: var(--color-texto);
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.grupo_input input:focus {
+    border-color: var(--primario);
+    box-shadow: 0 0 6px rgba(39, 174, 96, 0.15);
+}
+
+/* Espaciado elegante para los puntos negros de las contraseñas */
+.grupo_input input[type="password"] {
+    letter-spacing: 2.5px;
+}
+
+/* --- BOTONES DE ACCIÓN --- */
+.btn_guardar {
+    width: 100%;
+    background-color: var(--primario);
+    color: var(--blanco);
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.3s;
+}
+
+.btn_guardar:hover {
+    background-color: var(--primario-oscuro);
+}
+
+/* --- SECCIÓN SEPARADA: ZONA DE PELIGRO --- */
+.zona_peligro h3 {
+    color: var(--peligro);
+    border-bottom: 2px solid var(--peligro-fondo);
+}
+
+.advertencia_texto {
+    font-size: 14px;
+    color: var(--texto-mutado);
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+.btn_eliminar {
+    width: 100%;
+    background-color: var(--peligro);
+    color: var(--blanco);
+    border: none;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn_eliminar:hover {
+    background-color: var(--peligro-oscuro);
+}
+
+.btn_eliminar:active {
+    transform: scale(0.99);
+}
