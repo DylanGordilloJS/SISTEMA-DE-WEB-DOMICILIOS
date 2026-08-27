@@ -54,7 +54,6 @@ try {
             ]);
         }
     }
-
 // 4. Vaciamos el carrito tras el éxito
     unset($_SESSION['carrito']);
 

@@ -482,3 +482,8 @@ body {
 .detalle-row:last-child { border-bottom: none; }
 .detalle-label { color: var(--texto-mutado); }
 .detalle-valor { font-weight: 600; color: var(--color-texto); }
+
+/* Oculta por completo los elementos que tengan esta clase */
+.ocultar-boton {
+    display: none ;
+}

@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST['id_usuario'])) {
 
     } catch (PDOException $e) {
         echo "<script>
-                alert('Error al borrar: El usuario tiene registros vinculados en otras tablas (pedidos, domicilios, etc.).'); 
+                alert('Error al borrar: El usuario tiene registros vinculados en otras tablas pedidos.).'); 
                 window.history.back();
               </script>";
     }

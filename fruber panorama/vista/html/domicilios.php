@@ -18,6 +18,10 @@ try {
     //para que pueda hacer for en base de datos buscado el dato
     require_once "../../modelo/domicilos_datos.php";
     require_once "../../modelo/consulta_nombre_domciliario.php";
+    //el total de todos de todos los pedido igual (estado
+    require_once "../../modelo/consulta_contar_estado_todo.php";
+    // el valor total de entragaos de precio
+    require_once "../../modelo/consulta_calcular_total_precio_entregado.php";
     
     $Usuarios = [];
     $pedidos = [];
@@ -34,9 +38,12 @@ try {
         $Pedido = $consulta_Pedido->fetchAll(PDO::FETCH_ASSOC);
     }
 
+
+
 } catch (PDOException $e) {  
     die("Error al cargar la configuración: " . $e->getMessage());
 }
+
 
 
 ?>
@@ -66,6 +73,7 @@ try {
         </div>
     </header>
 
+
     <!-- BIENVENIDA + ESTADO DE TURNO -->
     <div class="bienvenida">
         <div class="bienvenida-texto">
@@ -78,19 +86,19 @@ try {
     <!-- ESTADÍSTICAS -->
     <div class="stats-bar">
         <div class="stat-card">
-            <div class="stat-num naranja" id="stat-pendientes">#</div>
+            <div class="stat-num naranja" id="stat-pendientes"><?= $totalPendientes ?></div>
             <div class="stat-label">Pedidos pendientes</div>
         </div>
         <div class="stat-card">
-            <div class="stat-num azul" id="stat-camino">#</div>
+            <div class="stat-num azul" id="stat-camino"><?= $totalEnCamino ?></div>
             <div class="stat-label">En camino ahora</div>
         </div>
         <div class="stat-card">
-            <div class="stat-num verde" id="stat-entregados">#</div>
+            <div class="stat-num verde" id="stat-entregados"><?= $totalEntregados ?></div>
             <div class="stat-label">Entregados hoy</div>
         </div>
         <div class="stat-card">
-            <div class="stat-num">#</div>
+            <div class="stat-num"><?= number_format($total_dinero , 0, '', '.'); ?></div>
             <div class="stat-label">Recaudado hoy</div>
         </div>
     </div>
@@ -118,8 +126,13 @@ try {
                         </tr>
                     </thead>
                       <?php foreach ($Pedidos as $Pedido): ?>
-                    <tbody id="cuerpo-tabla">
 
+                        <?php 
+                       // Comprobar si el estado es "Cancelado" (o "cancelado")
+                       //strtpñpwe  lo que hace es combierte todo en minicula
+                        $esCancelado = (strtolower($Pedido['estado'] ?? '') === 'cancelado');
+                        ?>
+                    <tbody id="cuerpo-tabla">
                         <tr id="fila-1005">
                             <td><strong><?php echo htmlspecialchars($Pedido['id_pedido']); ?></strong></td>
                             <td><?php echo htmlspecialchars($Pedido['nombre_1'] . ' ' . $Pedido['apellido_1']); ?></td>
@@ -130,10 +143,15 @@ try {
                             <td><span class="estado-badge en-camino"><?php  echo $Pedido['estado'] ?? "" ;?></span></td>
                             <td>
                                 <div class="btns-accion">
-                                    <button class="btn-accion btn-entregar">✔ Entregar</button>
-                                    <button class="btn-accion btn-entregar">🚶En camino</button>
-
-                                </div>
+                                        <form  method="post">
+                                    <!-- aca lo colocamos dentro class para agreagar una clase llamda ocuktar  haciendo un estructra de control  -->
+                                        <!--haremos captura el total  de pedido  que se esta refieriendo
+                                        con el boton  -->
+                                        <input type="hidden" name="id_pedido" value="<?= $Pedido["id_pedido"]?>">
+                                        <button type="submit" class="btn-accion btn-entregar <?= $esCancelado ? 'ocultar-boton' : '' ?>  " formaction="../../modelo/consulta_entraga_domicilios.php">✔ Entregar</button>
+                                        <button type="submit" class="btn-accion btn-entregar  <?= $esCancelado ? 'ocultar-boton' : '' ?>"  formaction="../../modelo/consulta_en_camino_domiciliario.php">🚶En camino</button>
+                                    </form>
+                                    </div>
                             </td>
                         </tr>
                       <?php endforeach; ?>

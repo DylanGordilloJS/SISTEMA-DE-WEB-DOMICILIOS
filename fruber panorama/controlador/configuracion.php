@@ -12,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Conexión a la base de datos (sube un nivel a la raíz y entra a modelo)
     $id_actual = $_SESSION['id_usuario'];
-
     $nombre    = $_POST['nombre_1'];
     $apellido  = $_POST['apellido_1'];
     $correo    = $_POST['email'];
