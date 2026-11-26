@@ -82,4 +82,9 @@ Si deseas ejecutar el proyecto en un entorno local (como XAMPP, WAMP o Laragon):
 3. **Configurar la conexión:**
    * Verifica las credenciales de conexión a MySQL (`host`, `usuario`, `contraseña` y `nombre de BD`) en el archivo de configuración del modelo.
 4. **Ejecutar:**
-   * Ubica la carpeta del proyecto dentro del directorio raíz de tu servidor local (ej. `htdocs/`) y accede desde tu navegador a `http://localhost/<nombre-carpeta>/vista/html/login.html`.
+   * Ubica la carpeta del proyecto dentro del directorio raíz de tu servidor local (ej. `htdocs/`) y accede desde tu navegador a `http://localhost/SISTEMA-DE-WEB-DOMICILIOS/vista/html/login.html`.
+
+## Nota sobre advertencias del navegador (Safe Browsing)
+
+Al acceder a la versión desplegada en subdominios gratuitos (`*.infinityfreeapp.com`), navegadores como Brave o Google Chrome pueden mostrar temporalmente el aviso **"Sitio peligroso"** mediante **Google Safe Browsing**[cite: 6].
+
