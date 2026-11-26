@@ -6,7 +6,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 // 1. Validar sesión activa
 if (!isset($_SESSION['id_usuario'])) {
-    header("Location: ../vista/html/login.html"); 
+    header("Location: login.html"); 
     exit();
 }
 
@@ -66,7 +66,7 @@ try {
         </div>
         <div class="encabezado-der">
             <span class="chip-rol">🚴 Domiciliario</span>
-            <a href="../html/login.html" class="btn-salir">Cerrar sesión</a>
+            <a href="../../controlador/cerrar_sesion.php" class="btn-salir">Cerrar sesión</a>
             <a href="../html/configuraciones.php" class="btn-salir">configuración </a>
 
             

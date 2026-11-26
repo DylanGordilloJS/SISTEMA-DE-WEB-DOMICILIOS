@@ -5,7 +5,7 @@ session_start();
 
 // 1. Validar sesión activa
 if (!isset($_SESSION['id_usuario'])) {
-    header("Location: ../vista/html/login.html");
+    header("Location: login.html");
     exit();
 }
 

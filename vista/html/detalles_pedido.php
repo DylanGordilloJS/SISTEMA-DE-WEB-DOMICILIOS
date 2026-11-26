@@ -3,7 +3,7 @@ session_start();
 require_once "../../modelo/conexion.php";
 
 if (!isset($_SESSION['id_usuario'])) {
-    header("Location: ../vista/html/login.html");
+    header("Location: login.html");
     exit();
 }
 
