@@ -10,8 +10,8 @@ if (!isset($_SESSION['id_usuario'])) {
 
 // 2. Validar que la petición sea por POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre_producto = $_POST['nombre_producto'] ?? '';
-    $precio = $_POST['precio'] ?? '';
+    $nombre_producto = trim($_POST['nombre_producto'] ?? '');
+    $precio = trim($_POST['precio'] ?? '');
 
     // Validación básica de campos vacíos
     if (empty($nombre_producto) || empty($precio)) {
@@ -19,6 +19,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 alert('Error: Todos los campos son obligatorios.');
                 window.history.back();
               </script>";
+        exit();
+    }
+    if (strlen($nombre_producto) < 2 || strlen($nombre_producto) > 50) {
+        echo "<script>alert('Error: el nombre del producto debe tener entre 2 y 50 caracteres.'); window.history.back();</script>";
+        exit();
+    }
+    if (!is_numeric($precio) || (float)$precio < 0 || (float)$precio > 99999) {
+        echo "<script>alert('Error: el precio debe ser un numero valido entre 0 y 99999.'); window.history.back();</script>";
         exit();
     }
 

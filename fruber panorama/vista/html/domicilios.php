@@ -125,42 +125,54 @@ try {
                             <th>Acciones</th>
                         </tr>
                     </thead>
-                      <?php foreach ($Pedidos as $Pedido): ?>
+<?php foreach ($Pedidos as $Pedido): ?>
 
-                        <?php 
-                       // Comprobar si el estado es "Cancelado" (o "cancelado")
-                       //strtpñpwe  lo que hace es combierte todo en minicula
-                        $esCancelado = (strtolower($Pedido['estado'] ?? '') === 'cancelado');
-                        ?>
-                    <tbody id="cuerpo-tabla">
-                        <tr id="fila-1005">
-                            <td><strong><?php echo htmlspecialchars($Pedido['id_pedido']); ?></strong></td>
-                            <td><?php echo htmlspecialchars($Pedido['nombre_1'] . ' ' . $Pedido['apellido_1']); ?></td>
-                            <td>
-                                <div class="dir-principal"><?php echo  $Pedido['direccion_entrega']; ?></div>  
-                            </td>
-                            <td><strong><?php echo number_format($Pedido['total'], 0, '', '.'); ?></strong></td>
-                            <td><span class="estado-badge en-camino"><?php  echo $Pedido['estado'] ?? "" ;?></span></td>
-                            <td>
-                                <div class="btns-accion">
-                                        <form  method="post">
-                                    <!-- aca lo colocamos dentro class para agreagar una clase llamda ocuktar  haciendo un estructra de control  -->
-                                        <!--haremos captura el total  de pedido  que se esta refieriendo
-                                        con el boton  -->
-                                        <input type="hidden" name="id_pedido" value="<?= $Pedido["id_pedido"]?>">
-                                        <button type="submit" class="btn-accion btn-entregar <?= $esCancelado ? 'ocultar-boton' : '' ?>  " formaction="../../modelo/consulta_entraga_domicilios.php">✔ Entregar</button>
-                                        <button type="submit" class="btn-accion btn-entregar  <?= $esCancelado ? 'ocultar-boton' : '' ?>"  formaction="../../modelo/consulta_en_camino_domiciliario.php">🚶En camino</button>
-                                    </form>
-                                    </div>
-                            </td>
-                        </tr>
-                      <?php endforeach; ?>
+    <?php 
+    // Obtenemos el estado actual del pedido en minúsculas
+    $estadoActual = strtolower(trim($Pedido['estado'] ?? ''));
+
+    // Si ya está "en camino", "entregado" o "cancelado", ocultamos el botón "En camino"
+    $ocultarEnCamino = ($estadoActual === 'en camino' || $estadoActual === 'en_camino' || $estadoActual === 'entregado' || $estadoActual === 'cancelado');
+
+    // Si ya está "entregado" o "cancelado", ocultamos el botón "Entregar"
+    $ocultarEntregar = ($estadoActual === 'entregado' || $estadoActual === 'cancelado');
+    ?>
+
+    <tr id="fila-<?= $Pedido['id_pedido'] ?>">
+        <td><strong><?php echo htmlspecialchars($Pedido['id_pedido']); ?></strong></td>
+        <td><?php echo htmlspecialchars($Pedido['nombre_1'] . ' ' . $Pedido['apellido_1']); ?></td>
+        <td>
+            <div class="dir-principal"><?php echo $Pedido['direccion_entrega']; ?></div>  
+        </td>
+        <td><strong><?php echo number_format($Pedido['total'], 0, '', '.'); ?></strong></td>
+        <td><span class="estado-badge en-camino"><?php echo $Pedido['estado'] ?? ""; ?></span></td>
+        <td>
+            <div class="btns-accion">
+                <form method="post">
+                    <input type="hidden" name="id_pedido" value="<?= $Pedido["id_pedido"] ?>">
+
+                    <button type="submit" 
+                            onclick="if(!confirmarEntrega()){return false;} this.style.display='none';" 
+                            class="btn-accion btn-entregar <?= $ocultarEntregar ? 'ocultar-boton' : '' ?>" 
+                            formaction="../../modelo/consulta_entraga_domicilios.php">
+                        ✔ Entregar
+                    </button>
+
+                    <button type="submit" 
+                            onclick="if(!confirmarEnCamino()){return false;} this.style.display='none';" 
+                            class="btn-accion btn-entregar <?= $ocultarEnCamino ? 'ocultar-boton' : '' ?>" 
+                            formaction="../../modelo/consulta_en_camino_domiciliario.php">
+                        🚶En camino
+                    </button>
+                </form>
+            </div>
+        </td>
+    </tr>
+        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
         </div>
-
-
     <!-- MODAL DETALLE -->
     <div class="modal-overlay" id="modal-overlay" onclick="cerrarModal(event)">
         <div class="modal-contenido">
@@ -171,5 +183,7 @@ try {
             <div id="modal-cuerpo"></div>
         </div>
     </div>
+
+    <script src="../js/domicilios.js"></script>
 </body>
 </html>

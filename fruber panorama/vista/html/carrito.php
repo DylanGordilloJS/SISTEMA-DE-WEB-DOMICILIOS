@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php
+session_start();
+$hayProductos = isset($_SESSION['carrito']) && count($_SESSION['carrito']) > 0;
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -16,8 +19,10 @@
             <ul>
                 <!-- Ajusta este enlace hacia tu catálogo principal -->
                 <li><a href="../../vista/html/detalles_pedido.php" >🏻 detalles del pedido</a></li>
-                <li><a href="../../vista/html/fruber.html">🛍️ Volver a la Tienda</a></li>
+                <li><a href="../../vista/html/fruber.php">🛍️ Volver a la Tienda</a></li>
+                <?php if ($hayProductos): ?>
                 <li class="carrito-fruver"><a href="../../vista/html/pago.php">Pagar</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>

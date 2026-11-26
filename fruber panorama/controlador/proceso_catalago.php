@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Lo añadimos a la sesión
     array_push($_SESSION['carrito'], $producto_nuevo);
     // Redirección directa 
-    header('Location: ../vista/html/fruber.html'); 
+    header('Location: ../vista/html/fruber.php'); 
     exit();
 }
 ?>

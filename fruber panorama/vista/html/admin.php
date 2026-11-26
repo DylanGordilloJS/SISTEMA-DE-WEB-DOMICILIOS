@@ -48,6 +48,7 @@ try {
     <style>
         /* Ocultar los checkboxes de control de modales */
         #modal-agregar-toggle,
+        #modal-usuario-toggle,
         .modal-editar-toggle {
             display: none;
         }
@@ -67,6 +68,10 @@ try {
         }
 
         #modal-agregar-toggle:checked ~ #modalAgregar {
+            display: flex;
+        }
+
+        #modal-usuario-toggle:checked ~ #modalUsuario {
             display: flex;
         }
 
@@ -148,6 +153,18 @@ try {
             box-sizing: border-box;
         }
 
+        .grupo-form select {
+            width: 100%;
+            padding: 11px;
+            background: #2f2f2f;
+            border: 1px solid #444;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 15px;
+            outline: none;
+            box-sizing: border-box;
+        }
+
         .acciones-form {
             display: flex;
             justify-content: space-between;
@@ -190,12 +207,14 @@ try {
 </head>
 <body>
 
-    <input type="radio" name="cambiar-vista" id="vista-productos" checked>
+    <?php $vistaInicial = (isset($_GET['vista']) && $_GET['vista'] === 'usuarios') ? 'usuarios' : 'productos'; ?>
+    <input type="radio" name="cambiar-vista" id="vista-productos" <?php echo $vistaInicial === 'productos' ? 'checked' : ''; ?>>
     <input type="radio" name="cambiar-vista" id="vista-pedidos">
-    <input type="radio" name="cambiar-vista" id="vista-usuarios">
+    <input type="radio" name="cambiar-vista" id="vista-usuarios" <?php echo $vistaInicial === 'usuarios' ? 'checked' : ''; ?>>
    
     <input type="checkbox" id="btn-menu">
     <input type="checkbox" id="modal-agregar-toggle">
+    <input type="checkbox" id="modal-usuario-toggle">
 
     <div class="maquetacion">
         <header class="encabezado-header">
@@ -249,7 +268,7 @@ try {
                                                 
                                                 <div class="grupo-form">
                                                     <label>Nombre del Producto:</label>
-                                                    <input type="text" name="nombre_producto" maxlength="50" value="<?php echo htmlspecialchars($producto['nombre_producto'], ENT_QUOTES); ?>" required>
+                                                    <input type="text" name="nombre_producto" maxlength="50"  value="<?php echo htmlspecialchars($producto['nombre_producto'], ENT_QUOTES); ?>"  required>
                                                 </div>
                                                 
                                                 <div class="grupo-form">
@@ -316,6 +335,9 @@ try {
         <div class="seccion-admin" id="sec-usuarios">
             <div class="listado_fruber">
                 <h1>👥 GESTIÓN DE USUARIOS</h1>
+                <div class="acciones-inventario">
+                    <label for="modal-usuario-toggle" class="btn-nuevo-producto" style="cursor: pointer; display: inline-flex; align-items: center;">+ Añadir Usuario</label>
+                </div>
                 <table class="tabla-admin">
                     <thead>
                         <tr>
@@ -379,10 +401,78 @@ try {
         </div>
     </div>
 
+    <!-- MODAL AÑADIR USUARIO -->
+    <div class="modal" id="modalUsuario">
+        <label for="modal-usuario-toggle" class="fondo-cerrar"></label>
+        <div class="modal-contenido" style="max-height: 90vh; overflow-y: auto;">
+            <label for="modal-usuario-toggle" class="cerrar-modal">&times;</label>
+            <h2>Añadir Nuevo Usuario</h2>
+            <form action="../../controlador/agregar_usuario_admin.php" method="POST">
+
+                <div class="grupo-form">
+                    <label for="nu_nombre">Nombres:</label>
+                    <input type="text" id="nu_nombre" name="nombre1" minlength="3" maxlength="30" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+" title="Solo se permiten letras y espacios" required>
+                </div>
+                <div class="grupo-form">
+                    <label for="nu_apellido">Apellidos:</label>
+                    <input type="text" id="nu_apellido" name="apellido" minlength="3" maxlength="39" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+" title="Solo se permiten letras y espacios" required>
+                </div>
+                <div class="grupo-form">
+                    <label for="nu_tipo_doc">Tipo de documento:</label>
+                    <select id="nu_tipo_doc" name="tipo_documento" required>
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="CC">Cédula de Ciudadanía (CC)</option>
+                        <option value="TI">Tarjeta de Identidad (TI)</option>
+                        <option value="CE">Cédula de Extranjería (CE)</option>
+                        <option value="PAS">Pasaporte</option>
+                        <option value="PEP">Permiso Especial de Permanencia (PEP)</option>
+                    </select>
+                </div>
+                <div class="grupo-form">
+                    <label for="nu_documento">Número de documento:</label>
+                    <input type="text" id="nu_documento" name="documento" minlength="8" maxlength="18" pattern="[0-9]+" title="Solo se permiten números" required>
+                </div>
+                <div class="grupo-form">
+                    <label for="nu_email">Correo electrónico:</label>
+                    <input type="email" id="nu_email" name="email" maxlength="80" required>
+                </div>
+                <div class="grupo-form">
+                    <label for="nu_direccion">Dirección:</label>
+                    <input type="text" id="nu_direccion" name="direccion" minlength="5" maxlength="100" required>
+                </div>
+                <div class="grupo-form">
+                    <label for="nu_telefono">Teléfono:</label>
+                    <input type="tel" id="nu_telefono" name="telefono" minlength="7" maxlength="15" pattern="[0-9]+" title="Solo se permiten números" required>
+                </div>
+                <div class="grupo-form">
+                    <label for="nu_clave">Contraseña:</label>
+                    <input type="password" id="nu_clave" name="contrasena1" minlength="8" maxlength="30" required>
+                </div>
+                <div class="grupo-form">
+                    <label for="nu_clave2">Confirmar contraseña:</label>
+                    <input type="password" id="nu_clave2" name="contrasena_confirmar" minlength="8" maxlength="30" required>
+                </div>
+                <div class="grupo-form">
+                    <label for="nu_rol">Rol:</label>
+                    <select id="nu_rol" name="rol" required>
+                        <option value="2" selected>Cliente</option>
+                        <option value="3">Domiciliario</option>
+                        <option value="1">Administrador</option>
+                    </select>
+                </div>
+
+                <div class="acciones-form">
+                    <button type="submit" class="btn-guardar">Guardar Usuario</button>
+                    <label for="modal-usuario-toggle" class="btn-cancelar" style="cursor: pointer;">Cancelar</label>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <div class="contener-menu">
         <div class="cont-menu">
             <nav>
-                <a href="../html/fruber.html">🏠 Inicio</a>
+                <a href="../html/fruber.php">🏠 Inicio</a>
                 <label for="vista-productos" class="opcion-menu">📦 Productos</label>
                 <label for="vista-pedidos" class="opcion-menu">🛒 Pedidos</label>
                 <label for="vista-usuarios" class="opcion-menu">👥 Usuarios</label>

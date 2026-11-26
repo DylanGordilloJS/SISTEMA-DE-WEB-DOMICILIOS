@@ -45,7 +45,7 @@ $estilos_estado = [
 <body>
 
     <div class="contenedor">
-          <a href="../../vista/html/fruber.html" class="enlace-volver">&larr; Volver al inicio</a>
+          <a href="../../vista/html/fruber.php" class="enlace-volver">&larr; Volver al inicio</a>
         <h2>Detalles de mis Pedidos</h2>
 
         <?php if (count($pedidos) === 0): ?>

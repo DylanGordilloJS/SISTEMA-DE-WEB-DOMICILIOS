@@ -1,56 +1,68 @@
 <?php
 session_start();
-echo "<pre>";
 require_once('../modelo/conexion.php'); 
-// 1. Recibir y validar que los datos no estén vacíos
-$correo = $_POST['correo'];
-$contrasena = $_POST['calve']; 
-$rol = $_POST['rol'];
 
-// si la cadaena esta vacia
-if (empty($correo) || empty($contrasena) || empty($rol)) {
-    die('Por favor, complete todos los campos.');
-}
+// 1. Recibir y validar que los datos no estén vacíos
+$correo = $_POST['correo'] ?? '';
+$contrasena = $_POST['clave'] ?? ''; 
+$rol = $_POST['rol'] ?? '';
 
 try {
-    // vincular archivo
+    // 2. Vincular el archivo de consulta
     require_once "../modelo/consulta_login.php";
-    //vincular los parametros 
+    
     // 3. Vincular los parámetros de forma segura
     $consulta->bindParam(':correo', $correo); 
-    $consulta->bindParam(':contrasena', $contrasena);
     $consulta->bindParam(':rol', $rol);
     
     $consulta->execute();
 
     // 4. Verificar si se encontró el usuario
     if ($consulta->rowCount() > 0) {
-      // Extraemos la fila del usuario de la base de datos
-    $usuario = $consulta->fetch(PDO::FETCH_ASSOC);
-    $_SESSION['id_usuario'] = $usuario['id_usuario']; 
-    // para mostar que id de usuario es 
-    echo "¡ID de usuario capturado con éxito!: " . $_SESSION['id_usuario'] . "<br>";
- //verificando con por numero
+        
+        $usuario = $consulta->fetch(PDO::FETCH_ASSOC);
+        $hashAlmacenado = $usuario['contrasena']; 
+
+        // 5. Verificar la contraseña
+        if (password_verify($contrasena, $hashAlmacenado)) {
+            
+            $_SESSION['id_usuario'] = $usuario['id_usuario']; 
+
+            // Redireccionamiento según el rol
             switch ((int)$usuario['id_RolFK']) {
                 case 1:
-                    echo '¡Bienvenido Administrador!';
-                    echo '<br><a href="../vista/html/admin.php" class="register">Entrar al Panel de Control</a>';
-                    break;
+                    header('Location: ../vista/html/admin.php');   
+                    exit();
                 case 2:
-                    echo '¡Ingreso exitoso!';
-                    echo '<br><a href="../vista/html/fruber.html" class="register">Entrar a la Tienda</a>';
-                    break;
+                    header('Location: ../vista/html/fruber.php');    
+                    exit();
                 case 3:
-                    echo '¡Bienvenido al sistema de entregas!';
-                    echo '<br><a href="../vista/html/domicilios.php" class="register">Ver Pedidos</a>';
-                    break;
+                    header('Location: ../vista/html/domicilios.php');
+                    exit();
                 default:
-                    echo '❌ ERROR: El rol no está configurado en el sistema.';
-                    break;
+                    echo "<script>
+                        alert('❌ ERROR: El rol no está configurado en el sistema.');
+                        window.location.href = '../vista/html/login.html';
+                    </script>";
+                    exit();
             }
 
-    }else {
-        echo '❌ ERROR: Credenciales incorrectas o el rol no coincide. Vuelva a intentarlo.';
+        } else {
+            // Contraseña incorrecta
+            echo "<script>
+                alert('❌ ERROR: Contraseña incorrecta. Vuelva a intentarlo.');
+                window.location.href = '../vista/html/login.html';
+            </script>";
+            exit();
+        }
+
+    } else {
+        // No se encontró el usuario o el rol no coincide
+        echo "<script>
+            alert('❌ ERROR: Credenciales incorrectas o el rol no coincide. Vuelva a intentarlo.');
+            window.location.href = '../vista/html/login.html';
+        </script>";
+        exit();
     }
 
 } catch (PDOException $e) {

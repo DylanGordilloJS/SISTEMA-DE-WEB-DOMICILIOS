@@ -59,8 +59,8 @@ try {
 
     echo "<script>
             alert('¡Tu pedido ha sido registrado con éxito! Estará llegando pronto a: " . $direccion_entrega . "');
-            window.location.href = '../vista/html/fruber.html';
-          </script>";
+            window.location.href = '../vista/html/fruber.php';
+        </script>";
 
 } catch (Exception $e) {
     echo "Error al registrar el pedido: " . $e->getMessage();

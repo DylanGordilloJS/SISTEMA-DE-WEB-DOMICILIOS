@@ -39,13 +39,14 @@ try {
     <div class="maquetacion">
         <!-- ENCABEZADO -->
         <header class="encabezado">
-            <a href="../html/fruber.html">
+            <a href="../html/fruber.php">
                 <img src="../asset/logo_Fruver_Panorama.png" alt="Logo Fruver Panorama" class="logo_header">
             </a> 
             <h2>Configuración</h2>
             <nav id="botones_enlazados">
                 <ul>
-                    <li><a href="../html/fruber.html">Inicio</a></li>
+                    <li><a href="../html/fruber.php">Inicio</a></li>
+                    <li><a href="../../controlador/cerrar_sesion.php">Cerrar Sesion</a></li>
                 </ul>
             </nav>
         </header>
@@ -60,12 +61,12 @@ try {
                     <form action="../../controlador/configuracion.php" method="post">
                         <div class="grupo_input">
                             <label for="usuario">Nombre de usuario</label>
-                            <input type="text" id="usuario" name="nombre_1" placeholder="Ej. Juan"  maxlength="30" value="<?php echo htmlspecialchars($usuario['nombre_1'] ?? ''); ?>" required>
+                            <input type="text" id="usuario" name="nombre_1" placeholder="Ej. Juan"  maxlength="30" value="<?php echo htmlspecialchars($usuario['nombre_1'] ?? ''); ?>" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+" title="Solo se permiten letras y espacios" required>
                         </div>
                         
                         <div class="grupo_input">
                             <label for="apellido">Apellido</label>
-                            <input type="text" id="apellido" name="apellido_1" placeholder="Ej. Pérez" maxlength="50 " value="<?php echo htmlspecialchars($usuario['apellido_1'] ?? ''); ?>" required>
+                            <input type="text" id="apellido" name="apellido_1" placeholder="Ej. Pérez" maxlength="50 " value="<?php echo htmlspecialchars($usuario['apellido_1'] ?? ''); ?>"  pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+" title="Solo se permiten letras y espacios" required>
                         </div>
 
                         <div class="grupo_input">
