@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Enlaces a CSS y recursos -->
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="icon" type="image/png" href="../asset/logo_Fruver_Panorama.png">
+    <title>Registro</title>
+</head>
+<body>
+    <div class="Register-conteiner">
+        <h1>Registro</h1>
+        <form action="../../controlador/procesamiento.php" method="post">
+            
+            <div class="register-input">
+                <!-- Nombres y Apellidos (Límites: 3 a 50 caracteres) -->
+                <input type="text" name="nombre1" placeholder="ESCRIBE TUS NOMBRES" minlength="3" maxlength="50" required>
+                <input type="text" name="apellido" placeholder="ESCRIBE TUS APELLIDOS" minlength="3" maxlength="50" required>
+                
+                <!-- Menú desplegable Tipo de Documento -->
+                <select name="tipo_documento" required>
+                    <option value="" disabled selected>SELECCIONA TIPO DE DOCUMENTO</option>
+                    <option value="CC">Cédula de Ciudadanía (CC)</option>
+                    <option value="TI">Tarjeta de Identidad (TI)</option>
+                    <option value="CE">Cédula de Extranjería (CE)</option>
+                    <option value="PAS">Pasaporte</option>
+                    <option value="PEP">Permiso Especial de Permanencia (PEP)</option>
+                </select>
+
+                <!-- Documento (Límites: 5 a 20 caracteres) -->
+                <input type="text" name="documento" placeholder="NÚMERO DE DOCUMENTO" minlength="8" maxlength="18" required>
+                
+                <!-- Correo, Dirección y Teléfono -->
+                <input type="email" name="email" placeholder="ESCRIBE TU DIRECCIÓN DE CORREO" maxlength="100" required>
+                <input type="text" name="direccion" placeholder="ESCRIBE TU DIRECCIÓN" minlength="5" maxlength="100" required>
+                <!-- Al teléfono le agregamos type="tel" y que solo permita números -->
+                <input type="tel" name="telefono" placeholder="ESCRIBE TU TELÉFONO" minlength="7" maxlength="15" pattern="[0-9]+" title="Solo se permiten números" required>
+            </div>
+
+            <div class="register-input"> 
+                <!-- Contraseña 1: Mínimo 8, Máximo 30 caracteres -->
+                <input type="password" name="contrasena1" placeholder="CREA TU CONTRASEÑA" minlength="8" maxlength="30" required>
+            </div>
+
+            <div class="register-input"> 
+                <!-- Contraseña 2: Mínimo 8, Máximo 30 caracteres -->
+                <input type="password" name="contrasena_confirmar" placeholder="CONFIRMA TU CONTRASEÑA" minlength="8" maxlength="30" required> 
+
+                <!-- Selección de Rol -->
+                <div class="grupo-seleccion">
+                    <p class="titulo-grupo">Selecciona tu Rol:</p>
+                    <div class="opciones-contenedor">
+                        <!-- Opción 1 -->
+                        <div class="opcion-item">
+                            <input type="radio" id="opt-admin" name="rol" value="1" class="input-oculto" required>
+                            <label for="opt-admin" class="boton-seleccion">Administrador</label>
+                        </div>
+
+                        <!-- Opción 2 -->
+                        <div class="opcion-item">
+                            <input type="radio" id="opt-cliente" name="rol" value="2" class="input-oculto">
+                            <label for="opt-cliente" class="boton-seleccion">Cliente</label>
+                        </div>
+
+                        <!-- Opción 3 -->
+                        <div class="opcion-item">
+                            <input type="radio" id="opt-domiciliario" name="rol" value="3" class="input-oculto">
+                            <label for="opt-domiciliario" class="boton-seleccion">Domiciliario</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="register">Registrarse</button>
+            <p class="cuenta">
+                ¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a>
+            </p>
+        </form>
+    </div>
+</body>
+</html>

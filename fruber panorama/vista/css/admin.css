@@ -1,0 +1,463 @@
+:root {
+    --primario: #e0e0e0;       /* Gris plateado para acentos */
+    --secundario: #ffffff;     /* Blanco puro */
+    --oscuro: #121212;         /* Gris profundo para fondos */
+    --texto-gris: #a0a0a0;     /* Gris medio para textos secundarios */
+}
+
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('https://img.magnific.com/fotos-premium/fondo-negro-plano-publicaciones-fondo-negro-plano-diseno-fondo-negro-solido_1020697-739766.jpg?semt=ais_hybrid&w=740&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--texto-gris);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* --- ENCABEZADO --- */
+.encabezado-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 15px 2%;
+    background-color: rgba(12, 12, 12, 0.85);
+    border-bottom: 1px solid #2f2f2f;
+}
+
+.ico_menu {
+    font-size: 30px;
+    color: var(--secundario);
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+.botones_header h2 {
+    color: var(--secundario);
+    font-size: 20px;
+}
+
+/* --- INTERRUPTORES OCULTOS --- */
+#btn-menu,
+#vista-productos,
+#vista-pedidos,
+#vista-usuarios {
+    display: none;
+}
+
+/* --- LÓGICA DE INTERCAMBIO DE PESTAÑAS --- */
+.seccion-admin {
+    display: none;
+}
+
+#vista-productos:checked ~ .centro #sec-productos {
+    display: block;
+}
+
+#vista-pedidos:checked ~ .centro #sec-pedidos {
+    display: block;
+}
+
+#vista-usuarios:checked ~ .centro #sec-usuarios {
+    display: block;
+}
+
+/* --- CONTENEDOR PANEL CENTRAL --- */
+.centro {
+    background: #1c1c1c; 
+    width: 95%;
+    max-width: 1100px; 
+    padding: 35px; 
+    margin: 40px auto; 
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.listado_fruber h1 {
+    font-size: 24px;
+    color: var(--secundario);
+    margin-bottom: 25px;
+    text-align: left;
+    border-bottom: 2px solid #2f2f2f;
+    padding-bottom: 10px;
+}
+
+/* --- BARRA DE ACCIONES (BUSCADOR Y BOTÓN) --- */
+.acciones-inventario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.caja-buscar {
+    display: flex;
+    align-items: center;
+    background: #2f2f2f;
+    padding: 10px 15px;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #444;
+}
+
+.caja-buscar span {
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.caja-buscar input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--secundario);
+    font-size: 15px;
+    width: 100%;
+}
+
+.btn-nuevo-producto {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-nuevo-producto:hover {
+    background-color: #218838;
+}
+
+/* --- TABLAS DE ADMINISTRACIÓN --- */
+.tabla-admin {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    color: var(--secundario);
+}
+
+.tabla-admin th {
+    background-color: #2f2f2f;
+    color: var(--primario);
+    padding: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.tabla-admin td {
+    padding: 14px;
+    border-bottom: 1px solid #2f2f2f;
+    font-size: 16px;
+    color: #e0e0e0;
+}
+
+.tabla-admin tbody tr:hover {
+    background-color: #252525;
+}
+
+/* --- BOTONES DE ACCIÓN --- */
+.btn-accion {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.btn-editar:hover {
+    background-color: rgba(0, 255, 255, 0.2);
+}
+
+.btn-eliminar:hover {
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+/* --- ETIQUETAS DE ESTADO (PEDIDOS) --- */
+.estado {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.estado.pendiente {
+    background-color: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+}
+
+/* --- PIE DE PAGINACIÓN --- */
+.paginacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    gap: 15px;
+}
+
+.btn-pag {
+    background: #2f2f2f;
+    color: var(--primario);
+    border: 1px solid #444;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 14px;
+}
+
+.btn-pag:hover {
+    background: #c7c7c7;
+    color: #121212;
+}
+
+.pag-actual {
+    font-size: 14px;
+    color: var(--texto-gris);
+}
+
+/* --- MENÚ LATERAL (DESPLEGABLE) --- */
+.contener-menu {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100vh;
+    top: 0; 
+    left: 0;
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+#btn-menu:checked ~ .contener-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+#btn-menu:checked ~ .contener-menu .cont-menu {
+    transform: translateX(0%);
+}
+
+.cont-menu {
+    width: 100%;
+    max-width: 250px;
+    background: #1c1c1c;
+    height: 100vh;
+    position: relative;
+    transition: all 500ms ease;
+    transform: translateX(-100%);
+    box-shadow: 5px 0 15px rgba(0,0,0,0.5);
+}
+
+.cont-menu nav {
+    transform: translateY(15%);
+}
+
+.cont-menu nav a,
+.cont-menu nav .opcion-menu {
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    color: var(--texto-gris);
+    border-left: 5px solid transparent;
+    transition: all 500ms ease;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cont-menu nav a:hover,
+.cont-menu nav .opcion-menu:hover {
+    border-left: 5px solid #c7c7c7;
+    background: #2f2f2f;
+    color: var(--secundario);
+}
+
+.cont-menu .ico_equis {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: var(--secundario);
+    cursor: pointer;
+    font-size: 25px;
+}
+
+/* =========================================
+   ESTILOS DE LA VENTANA MODAL (AÑADIR PRODUCTO)
+   ========================================= */
+
+/* Ocultar estrictamente el checkbox del modal */
+#toggle-modal {
+    display: none;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* El Modal por defecto está oculto */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+}
+
+/* MAGIA CSS: Si el checkbox está marcado, activa y muestra el modal hermano */
+#toggle-modal:checked ~ .modal {
+    display: flex;
+}
+
+/* Capa de fondo para cerrar al hacer clic fuera */
+.fondo-cerrar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* Caja contenedora del formulario modal */
+.modal-contenido {
+    background-color: #1c1c1c;
+    border: 1px solid #2f2f2f;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+    position: relative;
+    z-index: 2001;
+}
+
+.modal-contenido h2 {
+    color: var(--secundario);
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #2f2f2f;
+    padding-bottom: 8px;
+    text-align: left;
+}
+
+/* Botón de la 'X' para cerrar */
+.cerrar-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--texto-gris);
+    transition: color 0.2s;
+}
+
+.cerrar-modal:hover {
+    color: #ff4d4d;
+}
+
+/* Campos del formulario modal */
+.grupo-form {
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+.grupo-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: var(--primario);
+    font-size: 14px;
+}
+
+.grupo-form input {
+    width: 100%;
+    padding: 11px;
+    background: #2f2f2f;
+    border: 1px solid #444;
+    border-radius: 6px;
+    color: var(--secundario);
+    font-size: 15px;
+    outline: none;
+}
+
+.grupo-form input:focus {
+    border-color: #28a745;
+}
+
+/* Botones dentro del modal */
+.acciones-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    gap: 10px;
+}
+
+.btn-guardar {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.btn-guardar:hover {
+    background-color: #218838;
+}
+
+.btn-cancelar {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+    transition: background 0.2s;
+}
+
+.btn-cancelar:hover {
+    background-color: #c82333;
+}
+
+/* Forzar ocultamiento absoluto del checkbox del modal */
+#toggle-modal {
+    display: none !important;
+}
+
+/* Corregir la distribución interna del modal si se desalineó */
+.modal-contenido {
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}

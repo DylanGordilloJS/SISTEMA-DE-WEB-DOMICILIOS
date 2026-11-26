@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruver a Domicilio</title>
+    <link rel="icon" type="image/png" href="../asset/logo_Fruver_Panorama.png">
+    <link rel="stylesheet" href="../css/fruber.css">
+    <style>
+.cantidad-label-fruver {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 6px 0;
+    padding: 4px 10px;
+    background-color: #f2f7f0;
+    border: 1px solid #d8e6d2;
+    border-radius: 999px;
+    width: fit-content;
+}
+
+.cantidad-texto-fruver {
+    font-size: 12px;
+    font-weight: 600;
+    color: #4a7a3d;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.input-cantidad-fruver {
+    width: 44px;
+    text-align: center;
+    padding: 2px 4px;
+    border: none;
+    background: transparent;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2f4a28;
+
+}
+
+.input-cantidad-fruver:focus {
+    outline: none;
+}
+
+.input-cantidad-fruver::-webkit-inner-spin-button,
+.input-cantidad-fruver::-webkit-outer-spin-button {
+    opacity: 1;
+    height: 22px;
+}
+    </style>
+</head>
+<body>
+
+    <header class="encabezado-fruver">
+        <img src="../asset/logo_Fruver_Panorama.png" id="logo_Fruver_Panorama" alt="logo_de_Fruver_Panorama">
+        <h1 class="logo-fruver"> Fruver a Domicilio 🥕</h1>
+        <nav class="navegacion-fruver">
+            <ul>
+                <li><a href="#frutas">Frutas</a></li>
+                <li><a href="#verduras">Verduras</a></li>
+                <li><a href="#carne">Carnes</a></li>
+                <li><a href="#"></a></li>
+                <li class="carrito-fruver"><a href="../html/carrito.php">📦(Carrito)</a></li>
+                <li><a href="../html/configuraciones.php">⚙️</a></li>
+                <li></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <h2>Frescura Garantizada, Directo a tu Puerta</h2>
+        <p>Pedidos hechos antes de las 8 PM se entregan al día siguiente.</p>
+        <button class="boton-principal">¡Comprar Ahora!</button>
+    </section>
+
+    <main class="menu-productos-fruver">
+        
+        <h2 id="frutas">🍎 Nuestras Frutas Estrella</h2>
+        <div class="contenedor-productos-fruver">
+            <div class="tarjeta-fruver">
+                <img src="https://images.squarespace-cdn.com/content/v1/59bc6b2d29f1875d21620187/1682599976365-QQZEE299LWA6OLNCCE72/Banano.png?format=1500w" alt="Banano" class="producto-imagen-fruver">
+                <h2>Banano </h2>
+                <p class="unidad">Aproximadamente 5 unidades (1 Kg)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$3.800</span>
+                    <input type="hidden" name="nombre_producto" value="Banano">
+                    <input type="hidden" name="precio_producto" value="3800">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+            </div>
+
+            <div class="tarjeta-fruver">
+                <img src="https://imgs.search.brave.com/SLLrznATpv1GPZifBTsH3U08eAzuMpp8NFpe9pK8pPU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bWFnYS5nb2IuZ3Qv/d3AtY29udGVudC91/cGxvYWRzLzIwMjUv/MDEvRWwtY3VsdGl2/by1kZWwtbGltb24t/bWFuZGFyaW5hLWNy/ZWNlLWVuLWVsLXBh/aXMyLmpwZWc" alt="Limón Mandarino" class="producto-imagen-fruver">
+                <h2>Limón Mandarino</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$2.200</span>
+                    <input type="hidden" name="nombre_producto" value="Limón Mandarino">
+                    <input type="hidden" name="precio_producto" value="2200">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+            </div>
+
+            <div class="tarjeta-fruver">
+                <img src="https://imgs.search.brave.com/jjQYBVXD80jRXxPEMsvPZxL4fqPifVNJzsHHmJZmcu0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDEyR1A3UWpXUUwu/anBn" alt="Naranja Tangelo" class="producto-imagen-fruver">
+                <h2>Naranja Tangelo</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$2.300</span>
+                    <input type="hidden" name="nombre_producto" value="Naranja Tangelo">
+                    <input type="hidden" name="precio_producto" value="2300">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+            </div>
+
+            <div class="tarjeta-fruver">
+                <img src="https://imgs.search.brave.com/oprs36KxyNFrCMnFGsK0m-XonlY3BjiQiGj0YhpjO8o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9uYXJh/bmphLWRlLW5hZ3B1/ci1tYW5kYXJpbmEt/MzcxMDM3MzUuanBn" alt="Mandarina" class="producto-imagen-fruver">
+                <h2>Mandarina</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$2.500</span>
+                    <input type="hidden" name="nombre_producto" value="Mandarina">
+                    <input type="hidden" name="precio_producto" value="2500">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+            </div>
+
+            <div class="tarjeta-fruver">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpCVyqpopVExP6OA3MiNrnVvsIVnKKz-uRhZq7v3F7dl62d0wLcdPmXEw&s=10" alt="Mango Tommy" class="producto-imagen-fruver">
+                <h2>Mango Tommy</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$2.800</span>
+                    <input type="hidden" name="nombre_producto" value="Mango Tommy">
+                    <input type="hidden" name="precio_producto" value="2800">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+            </div>
+
+            <div class="tarjeta-fruver">
+                <img src="https://imgs.search.brave.com/R8NPxZZrkA3bV5x0ey8TPb5aCygSXrhz3gI_AvqR8jE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMjIw/NjkxMzc1Ny9waG90/by9waWxlLW9mLWV4/b3RpYy1sdWxvLWZy/dWl0cy1hdC1hLXZp/YnJhbnQtbWFya2V0/cGxhY2UuanBnP2I9/MSZzPTYxMng2MTIm/dz0wJms9MjAmYz1x/YXVtWERVRHo0V1Vl/Nkhtb1BWdnZBbUtw/SUVMeUJXSG1aNG9y/SFRuSkdJPQ" alt="Lulo" class="producto-imagen-fruver">
+                <h2>Lulo</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$3.200</span>
+                    <input type="hidden" name="nombre_producto" value="Lulo">
+                    <input type="hidden" name="precio_producto" value="3200">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+            </div>
+
+            <div class="tarjeta-fruver">
+                <img src="https://imgs.search.brave.com/jEM5XwLM5Z3jeHf8g0Q9_U6pM5klxqWQhaJwBmPUvzA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy80/LzQ5L01hcmFjdXkl/QzMlQTFfKGZydXRv/cykuanBn" alt="Maracuyá" class="producto-imagen-fruver">
+                <h2>Maracuyá</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$2.800</span>
+                    <input type="hidden" name="nombre_producto" value="Maracuyá">
+                    <input type="hidden" name="precio_producto" value="2800">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+            </div>
+
+            <div class="tarjeta-fruver">
+                <img src="https://imgs.search.brave.com/AG7K0wRzYGTnQkrPHB9-kEhmynwrNwoHSzGcDddOIrY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzhjLzMy/L2NhLzhjMzJjYWM4/ODNmNDcyYmZkMjkw/N2NkZjYwMDViMjUw/LmpwZw" alt="Tomate de Árbol" class="producto-imagen-fruver">
+                <h2>Tomate de Árbol</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$2.600</span>
+                    <input type="hidden" name="nombre_producto" value="Tomate de Árbol">
+                    <input type="hidden" name="precio_producto" value="2600">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+            </div>
+
+            <div class="tarjeta-fruver">
+                <img src="https://img.lalr.co/cms/2023/01/10083818/fprincipal-1-scaled.jpg" alt="Fresa Orgánica" class="producto-imagen-fruver">
+                <h2>Fresa Orgánica</h2>
+                <p class="unidad">Caja de 500 gramos</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$6.500</span>
+                    <input type="hidden" name="nombre_producto" value="Fresa Orgánica">
+                    <input type="hidden" name="precio_producto" value="6500">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+            </div>
+
+            <div class="tarjeta-fruver">
+                <img src="https://imgs.search.brave.com/XXeXFchqn8G207pzww-QcrvwvT8HFWe6T-OHy9c1Uak/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c2h1dHRlcnN0b2Nr/LmNvbS9pbWFnZS1w/aG90by9icmF6aWxp/YW4tdGFoaXRpLWxl/bW9uLW9uLXdvb2Rl/bi0yNjBudy0xODU0/NjMxMzAwLmpwZw" alt="Limón Tahití" class="producto-imagen-fruver">
+                <h2>Limón Tahití</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$1.800</span>
+                    <input type="hidden" name="nombre_producto" value="Limón Tahití">
+                    <input type="hidden" name="precio_producto" value="1800">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+            </div>
+
+            <div class="tarjeta-fruver">
+                <img src="https://imgs.search.brave.com/XoyzCcmaq_9eEeW32ahA3Q05NOY9OEr_os_Lpff5J1A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTgy/NDI1MDA4L2VzL2Zv/dG8vbWFuemFuYXMt/ZnJlc2Nhcy5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9NUcw/NjdkR0pnMHVXdWk4/SWdVbll2MG9sTE5S/RldVdU1JS0VnVGZm/d295WT0" alt="Manzana Royal" class="producto-imagen-fruver">
+                <h2>Manzana Royal</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$4.500</span>
+                    <input type="hidden" name="nombre_producto" value="Manzana Royal">
+                    <input type="hidden" name="precio_producto" value="4500">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+            </div>
+            
+            <div class="tarjeta-fruver">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Starr_070730-7915_Citrus_sinensis.jpg/250px-Starr_070730-7915_Citrus_sinensis.jpg" alt="Naranja Valencia Jugosa" class="producto-imagen-fruver">
+                <h2>Naranja Valencia Jugosa</h2>
+                <p class="unidad">Malla de 2 Kg (aprox. 10 unidades)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$6.500</span>
+                    <input type="hidden" name="nombre_producto" value="Naranja Valencia Jugosa">
+                    <input type="hidden" name="precio_producto" value="6500">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+            </div>
+        </div>
+
+        <h2 id="verduras">🥬 Verduras Frescas</h2>
+        <div class="contenedor-productos-fruver">
+
+            <div class="tarjeta-fruver">
+                <img src="https://www.eluniverso.com/resizer/v2/UUBIUMHXV5GMPJ2IVH5BKO6GXQ.jpg?auth=6ab85e647c67b87e3cbe0770680009538659f8639758791ef8c10275fae432dc&width=1031&height=670&quality=75&smart=true" alt="Zanahoria Baby" class="producto-imagen-fruver">
+                <h2>Zanahoria Baby</h2>
+                <p class="unidad">Bolsa de 250 g</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$3.800</span>
+                    <input type="hidden" name="nombre_producto" value="Zanahoria Baby">
+                    <input type="hidden" name="precio_producto" value="3800">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+            </div>
+
+
+            <div class="tarjeta-fruver">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Broccoli_bunches.jpg" alt="Brócoli" class="producto-imagen-fruver">
+                <h2>Brócoli</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$2.800</span>
+                    <input type="hidden" name="nombre_producto" value="Brócoli">
+                    <input type="hidden" name="precio_producto" value="2800">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+            </div> 
+
+            <div class="tarjeta-fruver">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXIIzNofvQfpHPIJu_gVzjsUxdzE48Pjd0JuFDH6Wi_IKwBQWN99SxrIg&s=10" alt="Coliflor" class="producto-imagen-fruver">
+                <h2>Coliflor</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$3.200</span>
+                    <input type="hidden" name="nombre_producto" value="Coliflor">
+                    <input type="hidden" name="precio_producto" value="3200">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+            </div> 
+
+            <div class="tarjeta-fruver">
+                <img src="https://www.gastronomiavasca.net/uploads/image/file/3368/espinacas.jpg" alt="Espinaca" class="producto-imagen-fruver">
+                <h2>Espinaca</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$2.500</span>
+                    <input type="hidden" name="nombre_producto" value="Espinaca">
+                    <input type="hidden" name="precio_producto" value="2500">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+            </div> 
+
+            <div class="tarjeta-fruver">
+                <img src="https://gastrocronicas.com/wp-content/uploads/2010/09/e6310-calabacines_venezolanos.jpg?w=640" alt="Calabacín" class="producto-imagen-fruver">
+                <h2>Calabacín (Zucchini)</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$2.000</span>
+                    <input type="hidden" name="nombre_producto" value="Calabacín (Zucchini)">
+                    <input type="hidden" name="precio_producto" value="2000">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+            </div> 
+
+            <div class="tarjeta-fruver">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdJ4FNzUrMfafxpcZFd1cs4a3ZZ4Qr4vYGfh663X8eXyho5ouh23xv2gXk&s=10" alt="Apio" class="producto-imagen-fruver">
+                <h2>Apio</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$1.800</span>
+                    <input type="hidden" name="nombre_producto" value="Apio">
+                    <input type="hidden" name="precio_producto" value="1800">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+            </div> 
+
+            <div class="tarjeta-fruver">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbTSDao1y3dL5fNymzYgVYJEYcboHES7wek6rZ4j5WRWlrGCLtO-pL-YtO&s=10" alt="Pepino cohombro" class="producto-imagen-fruver">
+                <h2>Pepino cohombro</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$1.500</span>
+                    <input type="hidden" name="nombre_producto" value="Pepino cohombro">
+                    <input type="hidden" name="precio_producto" value="1500">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+            </div> 
+
+            <div class="tarjeta-fruver">
+                <img src="https://imgs.search.brave.com/acfERxNrlUlv5dp8EaC0LsWfz5loinFEVFLfLM7Wuog/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdG9y/YWdlLmdvb2dsZWFw/aXMuY29tL3BsYXph/cHJlY2lvc2NvbS9j/b3JhYmFzdG9zL0NF/Qk9MTEElMjBDQUJF/Wk9OQSUyMEJMQU5D/QS5qcGc" alt="Cebolla cabezona blanca" class="producto-imagen-fruver">
+                <h2>Cebolla cabezona blanca</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$1.800</span>
+                    <input type="hidden" name="nombre_producto" value="Cebolla cabezona blanca">
+                    <input type="hidden" name="precio_producto" value="1800">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+            </div>
+
+            <div class="tarjeta-fruver">
+                <img src="https://imgs.search.brave.com/PRoKmttSypSbmB0nFnrh81ETqUvBCXAtfhU3a0Fls74/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9waXhu/aW8uY29tL2ZyZWUt/aW1hZ2VzLzIwMjEv/MTAvMjIvMjAyMS0x/MC0yMi0xMC00My0w/NC01NzZ4Mzg0Lmpw/Zw" alt="Pimentón" class="producto-imagen-fruver">
+                <h2>Pimentón</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$2.800</span>
+                    <input type="hidden" name="nombre_producto" value="Pimentón">
+                    <input type="hidden" name="precio_producto" value="2800">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+            </div>
+
+            <div class="tarjeta-fruver">
+                <img src="https://img.lalr.co/cms/2017/08/14081102/Aguacate-Hass.jpg?size=xl" alt="Aguacate Hass" class="producto-imagen-fruver">
+                <h2>Aguacate Hass (x3)</h2>
+                <p class="unidad">3 Unidades grandes (aprox. 600 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$7.500</span>
+                    <input type="hidden" name="nombre_producto" value="Aguacate Hass (x3)">
+                    <input type="hidden" name="precio_producto" value="7500">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+            </div>
+
+            <div class="tarjeta-fruver">
+                <img src="https://imgs.search.brave.com/Qev-20zdRSVO87Na9ZMCWkdVoWeVGNx5YiG1_XqDWkE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNDYy/ODcxMzcxL2VzL2Zv/dG8vYmF0YXZpYS1s/ZWNodWdhLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz1jQUl4/RnJpUXctdldjZWdi/a2ZXU3R6WmExZ3pN/WXgxY2d6RmdFQ1JK/YWRvPQ" alt="Lechuga batavia" class="producto-imagen-fruver">
+                <h2>Lechuga batavia</h2>
+                <p class="unidad">1 unidad (aprox. 500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$2.200</span>
+                    <input type="hidden" name="nombre_producto" value="Lechuga batavia">
+                    <input type="hidden" name="precio_producto" value="2200">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+            </div>
+
+            <div class="tarjeta-fruver">
+                <img src="https://www.finedininglovers.es/sites/default/files/styles/1_1_768x768/public/article_content_images/tomate-fruta-verdura-hortaliza%C2%A9iStock.jpg.webp?itok=cp6mYFi3" alt="Tomate" class="producto-imagen-fruver">
+                <h2>Tomate</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$2.400</span>
+                    <input type="hidden" name="nombre_producto" value="Tomate">
+                    <input type="hidden" name="precio_producto" value="2400">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+            </div>
+        </div>
+
+        <!--PARTE DE CARNE-->
+        <h2 id="carne">🥩 CARNES</h2>
+        <div class="contenedor-productos-fruver">
+             <div class="tarjeta-fruver">
+                <img src="https://thefoodtech.com/wp-content/uploads/2020/05/carne-de-res.jpg" class="producto-imagen-fruver" alt="res">
+                <h2>Res</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$16.500</span>
+                    <input type="hidden" name="nombre_producto" value="Res">
+                    <input type="hidden" name="precio_producto" value="16500">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                </form>
+             </div>
+
+             <div class="tarjeta-fruver">
+                <img src="https://www.lavanguardia.com/files/og_thumbnail/uploads/2019/04/29/5e9981cfb3538.jpeg" class="producto-imagen-fruver" alt="carne de cerdo">
+                <h2>Cerdo</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$11.000</span>
+                    <input type="hidden" name="nombre_producto" value="Cerdo">
+                    <input type="hidden" name="precio_producto" value="11000">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                 </form>
+             </div>
+
+             <div class="tarjeta-fruver">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjmntx0tGHKTW1bTJYZFRjdsgCEjis44W6PYDRLCA1Hr_7fxUH2nniDcBb&s=10" class="producto-imagen-fruver" alt="pollo">
+                <h2>Pollo</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$7.500</span>
+                    <input type="hidden" name="nombre_producto" value="Pollo">
+                    <input type="hidden" name="precio_producto" value="7500">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                 </form>
+             </div>
+
+             <div class="tarjeta-fruver">
+                <img src="https://img.magnific.com/foto-gratis/vista-frontal-pollo-crudo-fresco-harina-gris-foto-carne-animal-comida-cocina-color-pollo_179666-44044.jpg?semt=ais_hybrid&w=740&q=80" class="producto-imagen-fruver" alt="pavo">
+                <h2>Pavo</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$14.000</span>
+                    <input type="hidden" name="nombre_producto" value="Pavo">
+                    <input type="hidden" name="precio_producto" value="14000">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                 </form>
+             </div>
+
+             <div class="tarjeta-fruver">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQOhxQAFaEoRupr_WdEewHqpPT9wlJc8WVz_qMBERcOGKVp1QzlkSHs5_Y&s=10" class="producto-imagen-fruver" alt="cordero">
+                <h2>Cordero</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$19.500</span>
+                    <input type="hidden" name="nombre_producto" value="Cordero">
+                    <input type="hidden" name="precio_producto" value="19500">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                 </form>
+             </div>
+
+             <div class="tarjeta-fruver">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYwPKh8TSB1FYeLRg9ylEWPU3bQy7Rb38X8gPPsxHG8w&s=10" class="producto-imagen-fruver" alt="conejo">
+                <h2>Conejo</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$18.000</span>
+                    <input type="hidden" name="nombre_producto" value="Conejo">
+                    <input type="hidden" name="precio_producto" value="18000">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                 </form>
+             </div>
+
+             <div class="tarjeta-fruver">
+                <img src="https://www.shutterstock.com/image-photo/raw-duck-carcass-isolated-on-260nw-2550424789.jpg" class="producto-imagen-fruver" alt="pato">
+                <h2>Pato</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$16.000</span>
+                    <input type="hidden" name="nombre_producto" value="Pato">
+                    <input type="hidden" name="precio_producto" value="16000">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                 </form>
+             </div>
+
+             <div class="tarjeta-fruver">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD7UA0P-t9Q91MJIaYqE_OXl1n-LasCyPtNhCPKGHmp8YStw4uzs8wiSU&s=10" class="producto-imagen-fruver" alt="cabrito">
+                <h2>Cabrito</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$21.000</span>
+                    <input type="hidden" name="nombre_producto" value="Cabrito">
+                    <input type="hidden" name="precio_producto" value="21000">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                 </form>
+             </div>
+
+             <div class="tarjeta-fruver">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3E67ZJh4PIekD-26CPGe4YzrQSZFqsSE25ii_5rZKHg&s" class="producto-imagen-fruver" alt="atun">
+                <h2>Atún</h2>
+                <p class="unidad">Lata de 170 g</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$6.200</span>
+                    <input type="hidden" name="nombre_producto" value="Atún">
+                    <input type="hidden" name="precio_producto" value="6200">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                 </form>
+             </div>
+
+             <div class="tarjeta-fruver">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQcthxMbTJws3Djp44EDcCCqfjUzGylv_epSp8BZk1OrMb1iMEZLvoZoY&s=10" class="producto-imagen-fruver" alt="bufalo">
+                <h2>Búfalo</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$22.000</span>
+                    <input type="hidden" name="nombre_producto" value="Búfalo">
+                    <input type="hidden" name="precio_producto" value="22000">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                 </form>
+             </div>
+             
+             <div class="tarjeta-fruver">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIwE-ydjQf66D_HIAE7oonrEILOloD9l1sCNCoRc8r9ohWuWdxGumk2_jp&s=10" class="producto-imagen-fruver" alt="codorniz">
+                <h2>Codorniz</h2>
+                <p class="unidad">Bandeja x2 unidades (approx. 300 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$13.500</span>
+                    <input type="hidden" name="nombre_producto" value="Codorniz">
+                    <input type="hidden" name="precio_producto" value="13500">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                 </form>
+             </div>
+                
+             <div class="tarjeta-fruver">
+                <img src="https://famipollo.com.co/wp-content/uploads/2020/05/morrillo.png" class="producto-imagen-fruver" alt="chuleta de cerdo">
+                <h2>Chuleta de cerdo</h2>
+                <p class="unidad">1 libra (500 g)</p>
+                <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                    <span class="precio-fruver">$11.500</span>
+                    <input type="hidden" name="nombre_producto" value="Chuleta de cerdo">
+                    <input type="hidden" name="precio_producto" value="11500">
+                    <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                    <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                 </form>
+             </div>
+        </div>
+
+        <!--PARTE DE GRANOS-->
+        <h2>🌾 GRANOS</h2>
+        <div class="contenedor-productos-fruver">
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsqwcuiMmFXglIaP_xaM3T59yDM4-RSaXlBNcF81EEi_gmHB8xIwqBFn5bpt5BcU8DGZjbetK-j9O7cXbQJi7JsVgcmHiP1lxhvWeWMgE&s=10" class="producto-imagen-fruver" alt="arveja">
+                    <h2>arveja</h2>
+                    <p class="unidad">Bolsa de 1 Libra (500 g)</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$3.200</span>
+                        <input type="hidden" name="nombre_producto" value="arveja">
+                        <input type="hidden" name="precio_producto" value="3200">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD60MYd6wuO-vGE3Q88Z0EwnjAtb6p6pp9CpQhMfi364o0dDbIbHIYHxg&s=10" class="producto-imagen-fruver" alt="Lentejas">
+                    <h2>Lentejas</h2>
+                    <p class="unidad">Bolsa de 1 Libra (500 g)</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$2.800</span>
+                        <input type="hidden" name="nombre_producto" value="Lentejas">
+                        <input type="hidden" name="precio_producto" value="2800">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnKJl6V2PqH6DuMVnRFUY6vQk5OV3ZFztjwCBZRvJWFj9m9vsLFssau8KJ&s=10" class="producto-imagen-fruver" alt="Garbanzos">
+                    <h2>Garbanzos</h2>
+                    <p class="unidad">Bolsa de 1 Libra (500 g)</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$4.200</span>
+                        <input type="hidden" name="nombre_producto" value="Garbanzos">
+                        <input type="hidden" name="precio_producto" value="4200">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+                <div class="tarjeta-fruver">
+                    <img src="https://thefoodtech.com/wp-content/uploads/2020/05/frijol-negro.jpg" class="producto-imagen-fruver" alt="Fríjol Negro">
+                    <h2>Fríjol Negro</h2>
+                    <p class="unidad">Bolsa de 1 Libra (500 g)</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$3.800</span>
+                        <input type="hidden" name="nombre_producto" value="Fríjol Negro">
+                        <input type="hidden" name="precio_producto" value="3800">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbh2dno8cgCOsyBg0Ijhuul5V4bR1Ds476vWkqntUeoV6x8GMWYzE6Uw&s=10" class="producto-imagen-fruver" alt="Fríjol Cabecita Negra">
+                    <h2>Fríjol Cabecita Negra</h2>
+                    <p class="unidad">Bolsa de 1 Libra (500 g)</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$3.900</span>
+                        <input type="hidden" name="nombre_producto" value="Fríjol Cabecita Negra">
+                        <input type="hidden" name="precio_producto" value="3900">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHQ2u8ZWJmKsxUDyFso5k6RdkLsgan5Jv9aMPbC9k7R0uCmj_X6r3Fnqo&s=10" class="producto-imagen-fruver" alt="Fríjol Rojo Radical">
+                    <h2>Fríjol Rojo Radical</h2>
+                    <p class="unidad">Bolsa de 1 Libra (500 g)</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$5.200</span>
+                        <input type="hidden" name="nombre_producto" value="Fríjol Rojo Radical">
+                        <input type="hidden" name="precio_producto" value="5200">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9GKaowwajSEpNjz4rIV81YURB_OfkWyWS2t_P_dmjFY0ilgYoLYjoyDov&s=10" class="producto-imagen-fruver" alt="Fríjol Blanco">
+                    <h2>Fríjol Blanco</h2>
+                    <p class="unidad">Bolsa de 1 Libra (500 g)</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$4.500</span>
+                        <input type="hidden" name="nombre_producto" value="Fríjol Blanco">
+                        <input type="hidden" name="precio_producto" value="4500">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBysdDno1rxFvtoDGxTnvmRt49XyI5MhdaZZPkzefaqA&s=10" class="producto-imagen-fruver" alt="Maíz Pira">
+                    <h2>Maíz Pira</h2>
+                    <p class="unidad">Bolsa de 1 Libra (500 g)</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$2.600</span>
+                        <input type="hidden" name="nombre_producto" value="Maíz Pira">
+                        <input type="hidden" name="precio_producto" value="2600">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiwvBU6kBiAA0dOzM353ZFr7GHJyi4fMW2gV4T88yfnIV9iN5AEFrpWHo&s=10" class="producto-imagen-fruver" alt="Maíz Blanco Trillado">
+                    <h2>Maíz Blanco Trillado</h2>
+                    <p class="unidad">Bolsa de 1 Libra (500 g)</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$2.200</span>
+                        <input type="hidden" name="nombre_producto" value="Maíz Blanco Trillado">
+                        <input type="hidden" name="precio_producto" value="2200">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+                <div class="tarjeta-fruver">
+                    <img src="https://imgs.search.brave.com/V0Wpm5eXaEPmQ1tfwkEtCyCOEmVDLqqwI0DxoTzid3E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDF2eU0tOEEtNEwu/anBn" class="producto-imagen-fruver" alt="Cebada Perlada">
+                    <h2>Cebada Perlada</h2>
+                    <p class="unidad">Bolsa de 1 libra (500 g)</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$2.400</span>
+                        <input type="hidden" name="nombre_producto" value="Cebada Perlada">
+                        <input type="hidden" name="precio_producto" value="2400">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLv_prZbGfcTN8uKFeWog6fAnpSgpddUhKIQ&s" class="producto-imagen-fruver" alt="arroz diana">
+                    <h2>arroz diana</h2>
+                    <p class="unidad">Bolsa de 1 Libra (500 g)</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$2.350</span>
+                        <input type="hidden" name="nombre_producto" value="arroz diana">
+                        <input type="hidden" name="precio_producto" value="2350">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+                <div class="tarjeta-fruver">
+                    <img src="https://plazamercado.shop/wp-content/uploads/2020/06/arveja-desgranada-2.jpg" alt="arveja" class="producto-imagen-fruver">
+                    <h2>arveja </h2>
+                    <p class="unidad">Bolsa de 1 Libra (500 g)</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$3.200</span>
+                        <input type="hidden" name="nombre_producto" value="arveja">
+                        <input type="hidden" name="precio_producto" value="3200">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div> 
+
+        </div>
+             
+        <!--Parte de ACEITES-->
+        <h2>🧴 ACEITES</h2>
+        <div class="contenedor-productos-fruver">
+
+                <div class="tarjeta-fruver">
+                    <img src="https://www.tiendaedexa.com/12632-large_default/aceite-de-oliva-extra-virgen-la-constancia-x-1000-ml.jpg" class="producto-imagen-fruver" alt=" Aceite de Oliva Extra Virgen">
+                    <h2>Aceite de Oliva Extra Virgen</h2>
+                    <p class="unidad">Botella de 500 ml</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$32.000</span>
+                        <input type="hidden" name="nombre_producto" value="Aceite de Oliva Extra Virgen">
+                        <input type="hidden" name="precio_producto" value="32000">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM-3Hw6ebuZIO2R-a-SvUnXWYtQ1zAGXM74D9u_vBG5pXSdGnglQUARpzI&s=10" class="producto-imagen-fruver" alt="Aceite de girasol ">
+                    <h2>Aceite de girasol </h2>
+                    <p class="unidad">Botella de 900 ml</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$11.500</span>
+                        <input type="hidden" name="nombre_producto" value="Aceite de girasol">
+                        <input type="hidden" name="precio_producto" value="11500">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIQyTPW9iSOc4dgN61YpH2wvJt8rNfEvVUb62oa4J_58unQ8yzfvH5pDlv&s=10" class="producto-imagen-fruver" alt="Aceite de coco">
+                    <h2>Aceite de coco </h2>
+                    <p class="unidad">Frasco de 230 ml</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$18.900</span>
+                        <input type="hidden" name="nombre_producto" value="Aceite de coco">
+                        <input type="hidden" name="precio_producto" value="18900">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+                <div class="tarjeta-fruver">
+                    <img src="https://i0.wp.com/disarbel.co/wp-content/uploads/2023/11/eZy-Watermark_16-11-2023_12-58-30-4000p.-m.jpg?fit=1600%2C1600&ssl=1" class="producto-imagen-fruver" alt="Aceite de aguacate">
+                    <h2>Aceite de aguacate</h2>
+                    <p class="unidad">Botella de 250 ml</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$24.500</span>
+                        <input type="hidden" name="nombre_producto" value="Aceite de aguacate">
+                        <input type="hidden" name="precio_producto" value="24500">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+                
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7jeuH1xN4IjsPYkXmfRCj14l5fr3W_erMlRboiSyyjKdNRgLE3DBenug&s=10" class="producto-imagen-fruver" alt="Aceite de ajonjolí">
+                    <h2>Aceite de ajonjolí</h2>
+                    <p class="unidad">Botella de 250 ml</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$16.800</span>
+                        <input type="hidden" name="nombre_producto" value="Aceite de ajonjolí">
+                        <input type="hidden" name="precio_producto" value="16800">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+                
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNZbJ6Q5ZCfFwaWgGQXNiXcnK8XuxHIekMMyEU3JZP4PSP2yY0wI-Cy5w&s=10" class="producto-imagen-fruver" alt="Aceite de macadamia">
+                    <h2>Aceite de macadamia</h2>
+                    <p class="unidad">Frasco de 250 ml</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$28.000</span>
+                        <input type="hidden" name="nombre_producto" value="Aceite de macadamia">
+                        <input type="hidden" name="precio_producto" value="28000">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+                
+                <div class="tarjeta-fruver">
+                    <img src="https://m.media-amazon.com/images/I/51ETfdHvHqL._AC_UF894,1000_QL80_.jpg" class="producto-imagen-fruver" alt="Aceite de canola">
+                    <h2>Aceite de canola</h2>
+                    <p class="unidad">Botella de 900 ml</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$12.500</span>
+                        <input type="hidden" name="nombre_producto" value="Aceite de canola">
+                        <input type="hidden" name="precio_producto" value="12500">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+                
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRaX6DzhxLV2TkDPSJP12tS-LgljTDtHEO355_xXtaCSv26ZBbbYXRQqsp&s=10" class="producto-imagen-fruver" alt="Aceite de maíz">
+                    <h2>Aceite de maíz</h2>
+                    <p class="unidad">Botella de 900 ml</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$14.200</span>
+                        <input type="hidden" name="nombre_producto" value="Aceite de maíz">
+                        <input type="hidden" name="precio_producto" value="14200">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+                
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqR3U0XhyyMu26IMe7qh7X6_5ssIrmZTBV_28KrLTKzyGZRtHSleFI-4KL&s=10" class="producto-imagen-fruver" alt="Aceite de soya">
+                    <h2>Aceite de soya</h2>
+                    <p class="unidad">Botella de 900 ml</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$8.900</span>
+                        <input type="hidden" name="nombre_producto" value="Aceite de soya">
+                        <input type="hidden" name="precio_producto" value="8900">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+                
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3pWUk1Trvn5UNcryRcPhQ6h9YwysYlk06YHP2JIY3J4ync4vWbTR_Po8&s=10" class="producto-imagen-fruver" alt="Aceite de maní tostado">
+                    <h2>Aceite de maní tostado</h2>
+                    <p class="unidad">Botella de 250 ml</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$19.000</span>
+                        <input type="hidden" name="nombre_producto" value="Aceite de maní tostado">
+                        <input type="hidden" name="precio_producto" value="19000">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+                
+                <div class="tarjeta-fruver">
+                    <img src="https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/hcb/hcb09734/y/8.jpg" class="producto-imagen-fruver" alt="Aceite de pepita de uva">
+                    <h2>Aceite de pepita de uva</h2>
+                    <p class="unidad">Botella de 500 ml</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$26.000</span>
+                        <input type="hidden" name="nombre_producto" value="Aceite de pepita de uva">
+                        <input type="hidden" name="precio_producto" value="26000">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+                
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtiCbuKBb2nUG17F689iX0k3WMJWpr8Vlyf8Pp4mXv0fqNT20QJpExFVvB&s=10" class="producto-imagen-fruver" alt="Aceite de linaza">
+                    <h2>Aceite de linaza</h2>
+                    <p class="unidad">Frasco de 250 ml</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$17.500</span>
+                        <input type="hidden" name="nombre_producto" value="Aceite de linaza">
+                        <input type="hidden" name="precio_producto" value="17500">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+        </div>
+
+        <!--Parte de otros-->
+        <h2>🍪 Otros</h2>
+        <div class="contenedor-productos-fruver">
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA2poF06ZiJxlq07DOIwTJKvlpOB3US7sxQISlNzxzvhmm28rZxsOId7I&s=10" class="producto-imagen-fruver" alt="Doritos">
+                    <h2>Doritos</h2>
+                    <p class="unidad">Paquete de 180 g</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$7.800</span>
+                        <input type="hidden" name="nombre_producto" value="Doritos">
+                        <input type="hidden" name="precio_producto" value="7800">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8LV41dnWaGGVTLfdZSWtojPnpPXeODgVp2k_vIS7zuw&s" class="producto-imagen-fruver" alt="Cheese Tris">
+                    <h2>Cheese Tris</h2>
+                    <p class="unidad">Paquete de 150 g</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$5.500</span>
+                        <input type="hidden" name="nombre_producto" value="Cheese Tris">
+                        <input type="hidden" name="precio_producto" value="5500">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCnTIqQpWy5D9m5ijl4KnhUVjM4wVL5UXklQBWGlOueA&s=10" class="producto-imagen-fruver" alt="Choclitos">
+                    <h2>Choclitos</h2>
+                    <p class="unidad">Paquete de 190 g</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$6.200</span>
+                        <input type="hidden" name="nombre_producto" value="Choclitos">
+                        <input type="hidden" name="precio_producto" value="6200">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgYsVOLuSJHHUkAwgLahSde5fGZQ6k-ttV2E1mhj50nS8jFbKKc3Q3WPQ&s=10" class="producto-imagen-fruver" alt="Galletas Tosh de Ajonjolí">
+                    <h2>Galletas Tosh de Ajonjolí</h2>
+                    <p class="unidad">Taco de 138 g</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$4.200</span>
+                        <input type="hidden" name="nombre_producto" value="Galletas Tosh de Ajonjolí">
+                        <input type="hidden" name="precio_producto" value="4200">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+
+                <div class="tarjeta-fruver">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_628187-MLA99359203434_112025-O.webp" class="producto-imagen-fruver" alt="Tostacos">
+                    <h2>Tostacos</h2>
+                    <p class="unidad">Paquete de 150 g</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$5.800</span>
+                        <input type="hidden" name="nombre_producto" value="Tostacos">
+                        <input type="hidden" name="precio_producto" value="5800">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgXsb7zBspAvddCJDmuocaaUBgxlpAKEO-CCBAaIoyPxTzJN3vTP-8-9M&s=10" class="producto-imagen-fruver" alt="Chicharrón de paquete">
+                    <h2>Chicharrón de paquete</h2>
+                    <p class="unidad">Paquete de 110 g</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$6.900</span>
+                        <input type="hidden" name="nombre_producto" value="Chicharrón de paquete">
+                        <input type="hidden" name="precio_producto" value="6900">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN7I0JfbcGy3L61Sa_PY7QFBURgaBlDBRe3K1ZhXsmlMEkXJsrCClcVrjo&s=10" class="producto-imagen-fruver" alt="Crispetas">
+                    <h2>Crispetas</h2>
+                    <p class="unidad">Paquete para microondas 85 g</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$3.800</span>
+                        <input type="hidden" name="nombre_producto" value="Crispetas">
+                        <input type="hidden" name="precio_producto" value="3800">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyvLXRUYhSTf0P7BXziq1DRfTS44pc5HbjTAoRpcuZE5ZomS0zP2cpc7M&s=10" class="producto-imagen-fruver" alt="Maní Moto">
+                    <h2>Maní Moto</h2>
+                    <p class="unidad">Paquete de 180 g</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$5.200</span>
+                        <input type="hidden" name="nombre_producto" value="Maní Moto">
+                        <input type="hidden" name="precio_producto" value="5200">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX95KGAEehW7T7epwrZTn6-860abuoRuJZBo2CePJDWoBpvigG3nKTkWFf&s=10" class="producto-imagen-fruver" alt="Maicitos">
+                    <h2>Maicitos</h2>
+                    <p class="unidad">Paquete de 120 g</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$4.500</span>
+                        <input type="hidden" name="nombre_producto" value="Maicitos">
+                        <input type="hidden" name="precio_producto" value="4500">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtHtjB_VdO5b1LriR1W9Ujrf-Lx26AQ5jhm4Wpq-WB3J92LC2fXKzX4sLI&s=10" class="producto-imagen-fruver" alt="Rosquitas de queso">
+                    <h2>Rosquitas de queso</h2>
+                    <p class="unidad">Paquete de 100 g</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$3.200</span>
+                        <input type="hidden" name="nombre_producto" value="Rosquitas de queso">
+                        <input type="hidden" name="precio_producto" value="3200">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgL6JNTBDnni_rJDURItbQYZFM8_TdB1Ww2coZ2BxXn6v3Z368PooIc8Q&s=10" class="producto-imagen-fruver" alt="Mezcla de frutos secos">
+                    <h2>Mezcla de frutos secos</h2>
+                    <p class="unidad">Bolsa de 200 g</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$11.800</span>
+                        <input type="hidden" name="nombre_producto" value="Mezcla de frutos secos">
+                        <input type="hidden" name="precio_producto" value="11800">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+
+                <div class="tarjeta-fruver">
+                    <img src="https://megaredil.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NDg1OCwicHVyIjoiYmxvYl9pZCJ9fQ==--89a2f1d68110d6d5a2972eb6cef43652d704ce46/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJyZXNpemVfdG9fZml0IjpbODAwLDgwMF19LCJwdXIiOiJ2YXJpYXRpb24ifX0=--1420d7fd3d20057726f0ef3c0043db24ca0403be/7702025113132.jpg?locale=es" class="producto-imagen-fruver" alt="Galletas Ducales">
+                    <h2>Galletas Ducales</h2>
+                    <p class="unidad">Taco de 294 g</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$5.600</span>
+                        <input type="hidden" name="nombre_producto" value="Galletas Ducales">
+                        <input type="hidden" name="precio_producto" value="5600">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxdQNv1OlE_N2ZW8gBNmIGg1QtWFuaarEx9Uk8x5sytq_hqwbs6Q75-wjt&s=10" class="producto-imagen-fruver" alt="Galletas Festival">
+                    <h2>Galletas Festival</h2>
+                    <p class="unidad">Rollito de 144 g</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$2.800</span>
+                        <input type="hidden" name="nombre_producto" value="Galletas Festival">
+                        <input type="hidden" name="precio_producto" value="2800">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+                <div class="tarjeta-fruver">
+                    <img src="https://unidrogas.vtexassets.com/arquivos/ids/379402/7590011251100.jpg?v=638890746089370000" class="producto-imagen-fruver" alt="Galletas Oreo">
+                    <h2>Galletas Oreo</h2>
+                    <p class="unidad">Taco de 126 g</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$3.500</span>
+                        <input type="hidden" name="nombre_producto" value="Galletas Oreo">
+                        <input type="hidden" name="precio_producto" value="3500">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+
+                <div class="tarjeta-fruver">
+                    <img src="https://eurosuper.vteximg.com.br/arquivos/ids/176188-292-292/7702189056221.jpg?v=638338489911070000?1783814400011" class="producto-imagen-fruver" alt="Galletas con chispas de chocolate">
+                    <h2>Galletas con chispas de chocolate</h2>
+                    <p class="unidad">Paquete de 200 g</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$4.800</span>
+                        <input type="hidden" name="nombre_producto" value="Galletas con chispas de chocolate">
+                        <input type="hidden" name="precio_producto" value="4800">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+
+                <div class="tarjeta-fruver">
+                    <img src="https://dulceria.co/wp-content/uploads/2019/09/71.jpg" class="producto-imagen-fruver" alt="Galletas Wafer">
+                    <h2>Galletas Wafer</h2>
+                    <p class="unidad">Paquete de 140 g</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$3.200</span>
+                        <input type="hidden" name="nombre_producto" value="Galletas Wafer">
+                        <input type="hidden" name="precio_producto" value="3200">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+
+                <div class="tarjeta-fruver">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_921353-MCO95497333601_102025-O.webp" class="producto-imagen-fruver" alt="Galletas de mantequilla">
+                    <h2>Galletas de mantequilla</h2>
+                    <p class="unidad">Lata / Empaque de 200 g</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$8.500</span>
+                        <input type="hidden" name="nombre_producto" value="Galletas de mantequilla">
+                        <input type="hidden" name="precio_producto" value="8500">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqZtzLwsTLXPuPTToVHx3EVGzIrZEa4CyQ6buK8TfjOdaL1dEu60_4WTc&s=10" class="producto-imagen-fruver" alt="Galletas Tosh de coco o miel">
+                    <h2>Galletas Tosh de coco o miel</h2>
+                    <p class="unidad">Taco de 140 g</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$4.200</span>
+                        <input type="hidden" name="nombre_producto" value="Galletas Tosh de coco o miel">
+                        <input type="hidden" name="precio_producto" value="4200">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+
+                <div class="tarjeta-fruver">
+                    <img src="https://vaquitaexpress.com.co/media/catalog/product/cache/e89ece728e3939ca368b457071d3c0be/7/6/7622201717568.jpg" class="producto-imagen-fruver" alt="Galletas Club Social">
+                    <h2>Galletas Club Social</h2>
+                    <p class="unidad">Paquete individual de 26 g</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$1.200</span>
+                        <input type="hidden" name="nombre_producto" value="Galletas Club Social">
+                        <input type="hidden" name="precio_producto" value="1200">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+                <div class="tarjeta-fruver">
+                    <img src="https://megaredil.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjMzMTI0MCwicHVyIjoiYmxvYl9pZCJ9fQ==--9566da8307a32612d136de1c25426bd7eace18a2/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJyZXNpemVfdG9fZml0IjpbODAwLDgwMF19LCJwdXIiOiJ2YXJpYXRpb24ifX0=--1420d7fd3d20057726f0ef3c0043db24ca0403be/7702024071563.jpg?locale=es" class="producto-imagen-fruver" alt="Galletas Saltinas">
+                    <h2>Galletas Saltinas</h2>
+                    <p class="unidad">Taco de 250 g</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$4.800</span>
+                        <input type="hidden" name="nombre_producto" value="Galletas Saltinas">
+                        <input type="hidden" name="precio_producto" value="4800">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgA_O9-jtTBVIPiKQA0UVgrvJuygvNQ3v0hN114s9o83d5cYgvYiBN6wY&s=10" class="producto-imagen-fruver" alt="Galletas de soda integrales">
+                    <h2>Galletas de soda integrales</h2>
+                    <p class="unidad">Taco de 230 g</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$5.200</span>
+                        <input type="hidden" name="nombre_producto" value="Galletas de soda integrales">
+                        <input type="hidden" name="precio_producto" value="5200">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+                <div class="tarjeta-fruver">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Vgdp1D0SpzLFx222evA0VYPLAjFueoPpLIkfa2oxtQ&s=10" class="producto-imagen-fruver" alt="Tocinetas">
+                    <h2>Tocinetas</h2>
+                    <p class="unidad">Paquete de 130 g</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$5.900</span>
+                        <input type="hidden" name="nombre_producto" value="Tocinetas">
+                        <input type="hidden" name="precio_producto" value="5900">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+                <div class="tarjeta-fruver">
+                    <img src="https://copservir.vtexassets.com/arquivos/ids/1685411/CHEETOS-BOLIQUESO_F.png?v=638922198836470000" class="producto-imagen-fruver" alt="Boliqueso">
+                    <h2>Boliqueso</h2>
+                    <p class="unidad">Paquete de 110 g</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$4.500</span>
+                        <input type="hidden" name="nombre_producto" value="Boliqueso">
+                        <input type="hidden" name="precio_producto" value="4500">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>
+
+                <div class="tarjeta-fruver">
+                    <img src="https://m.media-amazon.com/images/I/21ZOH3Z7PlL._AC_UF894,1000_QL80_.jpg" class="producto-imagen-fruver" alt="Semillas de girasol saladas">
+                    <h2>Semillas de girasol saladas</h2>
+                    <p class="unidad">Paquete de 100 g</p>
+                    <form action="../../controlador/proceso_catalago.php" method="POST" class="precio-contenedor-fruver" style="margin: 0;">
+                        <span class="precio-fruver">$4.200</span>
+                        <input type="hidden" name="nombre_producto" value="Semillas de girasol saladas">
+                        <input type="hidden" name="precio_producto" value="4200">
+                        <label class="cantidad-label-fruver">
+                        Cant:
+                        <input type="number" name="cantidad" value="1" min="1" max="30" class="input-cantidad-fruver">
+                    </label>
+                        <button type="submit" class="boton-pedir-fruver">Añadir</button>
+                    </form>
+                </div>    
+        </div>
+    </main>
+
+    <footer id="contacto-fruver" class="pie-pagina-fruver">
+        <p>Domicilios en fruber | Lunes a Sábado</p>
+        <p>Contáctanos: <a href="mailto:dylangordillomora18@gmail.com">dylangordillomora18@gmail.com</a> | Tel: 317 038 2341</p>
+    </footer>
+</body>
+</html>

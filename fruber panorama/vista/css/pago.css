@@ -1,0 +1,31 @@
+ .contenedor-pago {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .grupo-form {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .grupo-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .grupo-form input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .total-destacado {
+            text-align: center;
+            font-size: 1.5em;
+            color: #2e7d32; /* Verde Fruver */
+            margin-bottom: 20px;
+            font-weight: bold;
+        }

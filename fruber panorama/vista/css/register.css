@@ -1,0 +1,156 @@
+:root {
+    --primario: #e0e0e0;       /* Gris plateado para acentos y bordes */
+    --secundario: #ffffff;     /* Blanco puro para títulos de alto contraste */
+    --oscuro: #121212;         /* Gris profundo para fondos */
+    --texto-gris: #a0a0a0;     /* Gris medio para textos secundarios */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garantiza que el padding no altere el ancho general */
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKjVy-K_Iq7qIPGlp5Y8pl3IGABeifmB6f0qNPhVh6Z7Q1hfNlJ6wX7-g&s=10');
+    background-size: cover;
+    background-position: center;
+    color: var(--texto-gris);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.Register-conteiner {
+    width: 90%;
+    max-width: 420px;
+    padding: 50px 30px;
+    background-color: #121212;
+    border-radius: 20px;
+    box-shadow: 0px 0px 8px var(--primario);
+}
+
+.Register-conteiner h1 {
+    color: var(--texto-gris);
+    font-size: 40px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+/* ESTILOS COMPARTIDOS PARA INPUTS Y EL MENU SELECT */
+.Register-conteiner input,
+.Register-conteiner select {
+    background-color: var(--primario);
+    width: 100%;
+    border: none;
+    margin-bottom: 20px;
+    padding: 14px;
+    border-radius: 11px;
+    outline: none;
+    font-size: 13px;
+    color: #121212;
+    font-family: inherit;
+}
+
+/* ESTILOS ESPECÍFICOS PARA EL DESPLEGABLE (SELECT Y OPCIONES) */
+.Register-conteiner select {
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Color para el texto placeholder cuando la primera opción está seleccionada */
+.Register-conteiner select:invalid {
+    color: #666;
+}
+
+/* Estilos para la lista desplegable interna */
+.Register-conteiner select option {
+    background-color: var(--oscuro);
+    color: var(--secundario);
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(89, 89, 93);  
+}
+
+.Register-conteiner button.register {
+    width: 50%;
+    padding: 10px;
+    background-color: var(--secundario);
+    font-size: 18px; 
+    border-radius: 11px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.Register-conteiner button.register:hover {
+    transition: 0.3s;
+    background-color: #e0e0e0;
+}
+
+.cuenta { 
+    margin-top: 15px;
+}
+
+.cuenta a {
+    color: var(--secundario);
+}
+
+/* --- Estilos para la selección de Roles --- */
+.grupo-seleccion {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.titulo-grupo {
+    font-size: 14px;
+    font-weight: bold;
+    color: #c2c2c2;
+    margin-bottom: 10px;
+}
+
+.opciones-contenedor {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.opcion-item {
+    flex: 1;
+}
+
+.input-oculto {
+    display: none;
+}
+
+.boton-seleccion {
+    display: block;
+    text-align: center;
+    background-color: white;
+    color: #333;
+    padding: 12px 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.boton-seleccion:hover {
+    background-color: #f0f0f0;
+    border-color: #999;
+}
+
+.input-oculto:checked + .boton-seleccion {
+    background-color: #2ecc71;
+    color: white;
+    border-color: #27ae60;
+    box-shadow: 0 4px 8px rgba(46, 204, 113, 0.3);
+}
