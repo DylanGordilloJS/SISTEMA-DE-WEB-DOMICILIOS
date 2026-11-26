@@ -9,24 +9,37 @@ if (!isset($_SESSION['id_usuario'])) {
 
 // 2. Verificar que la petición se envíe mediante el formulario (método POST)
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
+
     // Conectar a la base de datos
     require_once '../modelo/conexion.php';
     $id_actual = $_SESSION['id_usuario'];
 
     try {
-        // conexion de archivos con la consulta
+        // 3. Verificar si el cliente tiene pedidos registrados
+        $verificar = $conn->prepare("SELECT COUNT(*) FROM pedido WHERE id_UsuarioFK = :id");
+        $verificar->bindParam(':id', $id_actual, PDO::PARAM_INT);
+        $verificar->execute();
+
+        if ((int) $verificar->fetchColumn() > 0) {
+            // Tiene historial: la cuenta NO se puede eliminar
+            echo "<script>
+                    alert('No se puede borrar la cuenta: Tienes historial o pedidos registrados en el sistema.');
+                    window.history.back();
+                  </script>";
+            exit();
+        }
+
+        // 4. Sin pedidos: eliminar la cuenta
         require_once "../modelo/consulta_eliminar.php";
 
-
         if ($stmt->execute()) {
-            // 4. Destruir la sesión por completo en el servidor porque el usuario ya no existe
+            // Destruir la sesión por completo en el servidor porque el usuario ya no existe
             session_unset();
             session_destroy();
 
             // Mensaje de éxito y redirección automática hacia la pantalla de login
             echo "<script>
-                    alert('¡Tu cuenta ha sido eliminada permanentemente de Fruver Panorama!'); 
+                    alert('¡Tu cuenta ha sido eliminada permanentemente de Fruver Panorama!');
                     window.location.href = '../vista/html/login.html';
                   </script>";
         } else {
@@ -36,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch (PDOException $e) {
         // Alerta en caso de que el usuario tenga compras o llaves foráneas amarradas en la BD
         echo "<script>
-                alert('No se puede borrar la cuenta: Tienes historial o pedidos registrados en el sistema.'); 
+                alert('No se puede borrar la cuenta: Tienes historial o pedidos registrados en el sistema.');
                 window.history.back();
               </script>";
     }

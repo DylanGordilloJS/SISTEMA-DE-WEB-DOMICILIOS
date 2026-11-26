@@ -355,10 +355,14 @@ try {
                                     <td><?php echo htmlspecialchars($usuario['email']); ?></td>
                                     <td><?php echo htmlspecialchars($usuario['id_RolFK']); ?></td>
                                     <td>
-                                        <form action="../../controlador/eliminar_cuenta_admin.php" method="post" onsubmit="return confirm('¿Deseas eliminar este usuario?');">                    
-                                            <input type="hidden" name="id_usuario" value="<?php echo htmlspecialchars($usuario['id_usuario']); ?>">
-                                            <button type="submit" class="btn-accion btn-eliminar" title="Eliminar">🗑️</button>
-                                        </form>
+                                        <?php if ((int) $usuario['id_RolFK'] === 1): ?>
+                                            <span class="btn-accion" title="Las cuentas de administrador están protegidas" style="opacity: .45; cursor: not-allowed;">🔒</span>
+                                        <?php else: ?>
+                                            <form action="../../controlador/eliminar_cuenta_admin.php" method="post" onsubmit="return confirm('¿Deseas eliminar este usuario? Se borrará también su historial de pedidos.');">                    
+                                                <input type="hidden" name="id_usuario" value="<?php echo htmlspecialchars($usuario['id_usuario']); ?>">
+                                                <button type="submit" class="btn-accion btn-eliminar" title="Eliminar">🗑️</button>
+                                            </form>
+                                        <?php endif; ?>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
